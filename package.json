@@ -1,0 +1,83 @@
+{
+  "name": "react-native-lib-cli",
+  "version": "1.0.0",
+  "description": "react-native library cli",
+  "main": "lib/index.js",
+  "bin": {
+    "react-native-lib-cli": "bin/react-native-lib-cli"
+  },
+  "files": [
+    "lib",
+    "templates"
+  ],
+  "engines": {
+    "node": ">= 10.0.0"
+  },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  },
+  "scripts": {
+    "prepare": "babel --extensions .ts,.tsx src --out-dir lib --ignore '**/__tests__/**' --source-maps --delete-dir-on-start",
+    "typescript": "tsc --noEmit",
+    "watch": "concurrently 'yarn typescript --watch' 'yarn prepare -- --watch'"
+  },
+  "dependencies": {
+    "chalk": "^4.1.0",
+    "commitlint": "^16.2.3",
+    "cross-spawn": "^7.0.3",
+    "dedent": "^0.7.0",
+    "ejs": "^3.1.5",
+    "fs-extra": "^9.0.1",
+    "github-username": "^5.0.1",
+    "prompts": "^2.4.0",
+    "validate-npm-package-name": "^3.0.0",
+    "yargs": "^16.2.0"
+  },
+  "optionalDependencies": {
+    "jetifier": "^1.6.6"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.12.10",
+    "@babel/core": "^7.12.10",
+    "@babel/preset-env": "^7.12.11",
+    "@babel/preset-typescript": "^7.16.7",
+    "@types/chalk": "^2.2.0",
+    "@types/cross-spawn": "^6.0.2",
+    "@types/dedent": "^0.7.0",
+    "@types/ejs": "^3.0.5",
+    "@types/fs-extra": "^9.0.5",
+    "@types/prompts": "^2.0.9",
+    "@types/validate-npm-package-name": "^3.0.2",
+    "@types/yargs": "^15.0.12",
+    "concurrently": "^7.0.0",
+    "husky": "^7.0.4",
+    "prettier": "^2.6.0",
+    "typescript": "^4.6.3"
+  },
+  "prettier": {
+    "singleQuote": true,
+    "tabWidth": 2,
+    "trailingComma": "es5",
+    "useTabs": false,
+    "quoteProps": "as-needed"
+  },
+  "repository": "https://github.com/GKerison/react-native-lib-cli",
+  "bugs": {
+    "url": "https://github.com/GKerison/react-native-lib-cli/issues"
+  },
+  "homepage": "https://github.com/GKerison/react-native-lib-cli/blob/master/README.md",
+  "author": "GKerison",
+  "license": "MIT",
+  "keywords": [
+    "react-native",
+    "library",
+    "module",
+    "view",
+    "component",
+    "ios",
+    "android",
+    "web",
+    "expo"
+  ]
+}
